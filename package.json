@@ -1,0 +1,27 @@
+{
+  "name": "projeto-labecommerce",
+  "version": "1.0.0",
+  "description": "É o primeiro projeto do back-end, onde praticamos toda a base de criação de uma API vinculada a um banco de dados real. Ele tem uma particularidade: seus requisitos são implementados ao longo dos exercícios pós aula. Isso significa que caso você siga o desenvolvimento das aulas, quando chegar na data de entrega já terá um projeto funcional e quase pronto para entrega.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/labenuexercicios/projeto-labecommerce.git"
+  },
+  "keywords": [
+    "backend",
+    "ecommerce"
+  ],
+  "author": "Murilo de Sousa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/labenuexercicios/projeto-labecommerce/issues"
+  },
+  "homepage": "https://github.com/labenuexercicios/projeto-labecommerce#readme",
+  "devDependencies": {
+    "@types/node": "^18.15.5",
+    "typescript": "^5.0.2"
+  }
+}

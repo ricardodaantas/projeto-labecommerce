@@ -8,3 +8,6 @@ console.log(process.argv[2])
 console.table(users)
 console.table(products)
 console.table(purchase)
+
+const teste = ""
+console.log(teste.length)

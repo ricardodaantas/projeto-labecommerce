@@ -62,7 +62,7 @@ export const getAllProduct = (): TProduct[]=>{
     return products
 }
 
-export const getProductById = (idToSearch: string): TProduct=>{
+export const getProductById = (idToSearch: string): TProduct | undefined =>{
     const result = products.find((product)=> product.id === idToSearch)
     return result
 }

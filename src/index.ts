@@ -15,10 +15,8 @@ app.listen(3003, () => {
 // ======================= Users =======================
 // Get All Users
 app.get("/users", (req: Request, res: Response)=>{
-    try {
-        
+    try {  
         res.status(200).send(users)
-
     } catch(error: any) {
         console.log(error) // print do erro no terminal para facilitar o debug
 		res.status(400).send(error.message)
@@ -31,11 +29,14 @@ app.get("/users/:id", (req: Request, res: Response)=>{
         const id = req.params.id
 
         const result = users.find((user)=> user.id === id)
+        if(!result){
+            throw new Error("Usuário não encontrado")
+        }
 
         res.status(200).send(result)
 
     } catch(error: any) {
-        console.log(error) // print do erro no terminal para facilitar o debug
+        console.log(error)
         res.status(400).send(error.message)
     }
 })
@@ -45,12 +46,16 @@ app.post("/users", (req: Request, res: Response)=>{
     try{
         
         const id = req.body.id
+        const name = req.body.name
         const email = req.body.email
         const password = req.body.password
 
         // validar o body
         if(typeof id !== "string"){
             throw new Error("'id' deve ser uma string")
+        }
+        if(typeof name !== "string"){
+            throw new Error("'name' deve ser uma string")
         }
         if(typeof email !== "string"){
             throw new Error("'email' deve ser uma string")
@@ -80,42 +85,58 @@ app.post("/users", (req: Request, res: Response)=>{
         res.status(201).send("Cadastro realizado com sucesso")
 
     } catch(error: any) {
-        console.log(error) // print do erro no terminal para facilitar o debug
+        console.log(error) 
         res.status(400).send(error.message)
     }
 })
 
 // Delete User by id
 app.delete("/users/:id", (req: Request, res: Response)=>{
-    const id = req.params.id
-
-    const indexUserToDelete = users.findIndex((user)=> user.id === id)
-
-    if(indexUserToDelete >= 0){
-        users.splice(indexUserToDelete, 1)
-        res.status(200).send("User apagado com sucesso")
-    } else {
-        res.status(400).send("User não encontrado")
+    try{
+        const id = req.params.id
+        
+        const indexUserToDelete = users.findIndex((user)=> user.id === id)
+        
+        if(indexUserToDelete >= 0){
+            users.splice(indexUserToDelete, 1)
+            res.status(200).send("User apagado com sucesso")
+        } else {
+            throw new Error("Usuário não encontrado")
+        }
+    } catch(error: any) {
+        console.log(error) 
+        res.status(400).send(error.message)
     }
 })
 
 // Edit User by id
 app.put("/users/:id", (req: Request, res: Response)=>{
-    const id = req.params.id
+    try{
+        const id = req.params.id
+        
+        const newEmail = req.body.email as string | undefined
+        const newPassword = req.body.password as string | undefined
 
-    const newEmail = req.body.email as string | undefined
-    const newPassword = req.body.password as string | undefined
-
-    const usersToEdit = users.find((user)=> user.id === id)
-
-    if(usersToEdit){
+        if(typeof newEmail !== "string" && typeof newEmail !== "undefined") {
+            throw new Error("novo email deve ser uma string")
+        }
+        if(typeof newPassword !== "string" && typeof newPassword !== "undefined") {
+            throw new Error("nova senha deve ser uma string")
+        }
+        
+        const usersToEdit = users.find((user)=> user.id === id)
+        if(!usersToEdit){
+            throw new Error("Usuário não encontrado")
+        }
 
         usersToEdit.email = newEmail || usersToEdit.email
         usersToEdit.password = newPassword || usersToEdit.password
+        
+        res.status(200).send("User atualizado com sucesso")
 
-        res.status(200).send("User apagado com sucesso")
-    } else {
-        res.status(400).send("User não encontrado")
+    }catch(error: any) {
+        console.log(error) 
+        res.status(400).send(error.message)
     }
 })
 
@@ -154,13 +175,21 @@ app.get("/products/search", (req: Request, res: Response)=>{
 
 // Get products by id
 app.get("/products/:id", (req: Request, res: Response)=>{
-    const id = req.params.id
+    try{
+        const id = req.params.id
+        
+        const result = products.find((product)=> product.id === id)
+        if(!result){
+            throw new Error("Produto não existe")
+        }
+        
+        res.status(200).send(result)
 
-    const result = products.find((product)=> product.id === id)
-
-    res.status(200).send(result)
+    }catch(error: any){
+        console.log(error) // print do erro no terminal para facilitar o debug
+		res.status(400).send(error.message)
+    }
 })
-
 
 // Create Product
 app.post("/products", (req: Request, res: Response)=>{
@@ -170,6 +199,7 @@ app.post("/products", (req: Request, res: Response)=>{
         const price = req.body.price
         const category = req.body.category as CATEGORY
 
+        //validar body
         if(typeof id !== "string"){
             throw new Error("'password' deve ser uma string")
         }
@@ -199,39 +229,59 @@ app.post("/products", (req: Request, res: Response)=>{
     }
 })
 
-
 // Edit Product by id
 app.put("/products/:id", (req: Request, res: Response)=>{
-    const id = req.params.id
+    try{
+        const id = req.params.id
+        
+        const newName = req.body.name
+        const newPrice = req.body.price
+        const newCategory = req.body.category
 
-    const newName = req.body.name as string | undefined
-    const newPrice = req.body.price as number | undefined
-    const newCategory = req.body.category as CATEGORY | undefined
-
-    const productsToEdit = products.find((product)=> product.id === id)
-
-    if(productsToEdit){
+        //validar body
+        if(typeof newName !== "string" && typeof newName !== "undefined"){
+            throw new Error("'password' deve ser uma string")
+        }
+        if(typeof newPrice !== "number" && typeof newPrice !== "undefined"){
+            throw new Error("'name' deve ser uma string")
+        }
+        // if(typeof newCategory !== "number"){
+        //     throw new Error("'newCategory' deve ser ..............")
+        // }
+        
+        //Validar que produto existe
+        const productsToEdit = products.find((product)=> product.id === id)
+        if(!productsToEdit){
+            throw new Error("produto não encontrado")
+        }
 
         productsToEdit.name = newName || productsToEdit.name
         productsToEdit.price = newPrice || productsToEdit.price
         productsToEdit.category = newCategory || productsToEdit.category
-
+        
         res.status(200).send("produto apagado com sucesso")
-    } else {
-        res.status(400).send("produto não encontrado")
+
+    }  catch(error: any) {
+        console.log(error) 
+        res.status(400).send(error.message)
     }
 })
 
 app.delete("/products/:id", (req: Request, res: Response)=>{
-    const id = req.params.id
-
-    const indexProductToDelete = products.findIndex((product)=> product.id === id)
-
-    if(indexProductToDelete >= 0){
-        products.splice(indexProductToDelete, 1)
-        res.status(200).send("Produto apagado com sucesso")
-    } else {
-        res.status(400).send("Produto não encontrado")
+    try{
+        const id = req.params.id
+        
+        const indexProductToDelete = products.findIndex((product)=> product.id === id)
+        
+        if(indexProductToDelete >= 0){
+            products.splice(indexProductToDelete, 1)
+            res.status(200).send("Produto apagado com sucesso")
+        } else {
+            throw new Error("Produto não encontrado")
+        }
+    }  catch(error: any) {
+        console.log(error) 
+        res.status(400).send(error.message)
     }
 })
 
@@ -239,16 +289,34 @@ app.delete("/products/:id", (req: Request, res: Response)=>{
 
 //Get All Purchases
 app.get("/purchases", (req: Request, res: Response)=>{
-    res.status(200).send(purchases)
+    try{
+        res.status(200).send(purchases)
+    }catch(error: any){
+        console.log(error)
+		res.status(400).send(error.message)
+    }
 })
 
 // Get User Purchases by User id
 app.get("/users/:id/purchases", (req: Request, res: Response)=>{
-    const id = req.params.id
+    try{
+        const id = req.params.id
+        
+        const resultUser = users.find((user)=>user.id === id)
+        if(resultUser){
+            throw new Error("Usuario não existe")
+        }
 
-    const result = purchases.find((purchase)=> purchase.userId === id)
-
-    res.status(200).send(result)
+        const result = purchases.find((purchase)=> purchase.userId === id)
+        if(!result){
+            throw new Error("Compra não existe")
+        }
+        
+        res.status(200).send(result)
+    }catch(error: any){
+        console.log(error)
+		res.status(400).send(error.message)
+    }
 })
 
 // Create Purchase

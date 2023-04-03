@@ -15,28 +15,74 @@ app.listen(3003, () => {
 // ======================= Users =======================
 // Get All Users
 app.get("/users", (req: Request, res: Response)=>{
-    res.status(200).send(users)
+    try {
+        
+        res.status(200).send(users)
+
+    } catch(error: any) {
+        console.log(error) // print do erro no terminal para facilitar o debug
+		res.status(400).send(error.message)
+    }
 })
 
 // Get Users by id
 app.get("/users/:id", (req: Request, res: Response)=>{
-    const id = req.params.id
+    try{
+        const id = req.params.id
 
-    const result = users.find((user)=> user.id === id)
+        const result = users.find((user)=> user.id === id)
 
-    res.status(200).send(result)
+        res.status(200).send(result)
+
+    } catch(error: any) {
+        console.log(error) // print do erro no terminal para facilitar o debug
+        res.status(400).send(error.message)
+    }
 })
 
 // Create User
 app.post("/users", (req: Request, res: Response)=>{
-    const id = req.body.id as string
-    const email = req.body.email as string
-    const password = req.body.password as string
+    try{
+        
+        const id = req.body.id
+        const email = req.body.email
+        const password = req.body.password
 
-    const newUser:TUser = {id, email, password}
-    users.push(newUser)
+        // validar o body
+        if(typeof id !== "string"){
+            throw new Error("'id' deve ser uma string")
+        }
+        if(typeof email !== "string"){
+            throw new Error("'email' deve ser uma string")
+        }
+        if(typeof password !== "string"){
+            throw new Error("'password' deve ser uma string")
+        }
+        if (!password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,12}$/g)) {
+			throw new Error("'password' deve possuir entre 8 e 12 caracteres, com letras maiúsculas e minúsculas e no mínimo um número e um caractere especial")
+		}
+        
+        //não deve ser possível criar mais de uma conta com a mesma id
+        const resultId = users.find((user)=> user.id === id)
+        if(resultId){
+            throw new Error("não deve ser possível criar mais de uma conta com a mesma id")
+        }
 
-    res.status(201).send("Cadastro realizado com sucesso")
+        //não deve ser possível criar mais de uma conta com o mesmo e-mail
+        const resultEmail = users.find((user)=> user.email === email)
+        if(resultEmail){
+            throw new Error("não deve ser possível criar mais de uma conta com o mesmo e-mail")
+        }
+
+        const newUser:TUser = {id, email, password}
+        users.push(newUser)
+
+        res.status(201).send("Cadastro realizado com sucesso")
+
+    } catch(error: any) {
+        console.log(error) // print do erro no terminal para facilitar o debug
+        res.status(400).send(error.message)
+    }
 })
 
 // Delete User by id
@@ -77,17 +123,33 @@ app.put("/users/:id", (req: Request, res: Response)=>{
 
 // Get All Products
 app.get("/products", (req: Request, res: Response)=>{
-    res.status(200).send(products)
+    try{
+        res.status(200).send(products)
+    } catch(error: any) {
+        console.log(error) // print do erro no terminal para facilitar o debug
+        res.status(400).send(error.message)
+    }
 })
 
 // Search Product by name
 app.get("/products/search", (req: Request, res: Response)=>{
-    const q = req.query.q as string
+    try {
+        const q = req.query.q
 
-    const result = products.filter((product)=>{
-        return product.name === q
-    })
-    res.status(200).send(result)
+        if(typeof q !== "string"){
+            throw new Error("'q' deve ser uma string")
+        }
+
+        const result = products.filter((product)=>{
+            return product.name === q
+        })
+        res.status(200).send(result)
+
+    }catch(error: any){
+        console.log(error) // print do erro no terminal para facilitar o debug
+		res.status(400).send(error.message)
+    }
+
 })
 
 // Get products by id
@@ -102,15 +164,39 @@ app.get("/products/:id", (req: Request, res: Response)=>{
 
 // Create Product
 app.post("/products", (req: Request, res: Response)=>{
-    const id = req.body.id as string
-    const name = req.body.name as string
-    const price = req.body.price as number
-    const category = req.body.category as CATEGORY
+    try{
+        const id = req.body.id
+        const name = req.body.name
+        const price = req.body.price
+        const category = req.body.category as CATEGORY
 
-    const newProduct:TProduct = {id, name, price, category}
-    products.push(newProduct)
+        if(typeof id !== "string"){
+            throw new Error("'password' deve ser uma string")
+        }
+        if(typeof name !== "string"){
+            throw new Error("'name' deve ser uma string")
+        }
+        if(typeof price !== "number"){
+            throw new Error("'price' deve ser uma number")
+        }
+        // if(typeof category !== CATEGORY){
+        //     throw new Error("'price' deve ser uma number")
+        // }
+        
+        //não deve ser possível criar mais de um produto com a mesma id
+        const resultId = products.find((product)=> product.id === id)
+        if(resultId){
+            throw new Error("não deve ser possível criar mais de uma conta com a mesma id")
+        }
 
-    res.status(201).send("Produto cadastrado com sucesso")
+        const newProduct:TProduct = {id, name, price, category}
+        products.push(newProduct)
+
+        res.status(201).send("Produto cadastrado com sucesso")
+    }catch(error:any){
+        console.log(error) // print do erro no terminal para facilitar o debug
+		res.status(400).send(error.message)
+    }
 })
 
 
@@ -167,15 +253,54 @@ app.get("/users/:id/purchases", (req: Request, res: Response)=>{
 
 // Create Purchase
 app.post("/purchases", (req: Request, res: Response)=>{
-    const userId = req.body.userId as string
-    const productId = req.body.productId as string
-    const quantify = req.body.quantity as number
-    const totalPrice = req.body.totalPrice as number
+    try{
+        const userId = req.body.userId
+        const productId = req.body.productId
+        const quantify = req.body.quantity
+        const totalPrice = req.body.totalPrice
 
-    const newPurchase:TPurchase = {userId, productId, quantify, totalPrice}
-    purchases.push(newPurchase)
+        //validar body
+        if(typeof userId !== "string"){
+            throw new Error("'userId' deve ser uma string")
+        }
+        if(typeof productId !== "string"){
+            throw new Error("'productId' deve ser uma string")
+        }
+        if(typeof quantify !== "number"){
+            throw new Error("'quantify' deve ser uma number")
+        }
+        if(typeof totalPrice !== "number"){
+            throw new Error("'totalPrice' deve ser uma number")
+        }
 
-    res.status(201).send("Carrinho cadastrado com sucesso")
+        //EXTRA
+        const resultIdUser = users.find((user)=> user.id === userId)
+        if(!resultIdUser){
+            throw new Error("id do usuário que fez a compra deve existir no array de usuários cadastrados")
+        }
+
+        const resultIdProduct = users.find((user)=> user.id === userId)
+        if(!resultIdProduct){
+            throw new Error("id do produto que fez a compra deve existir no array de produtos cadastrados")
+        }
+        
+        const resultPrice = products.find((poduct)=> poduct.id === userId)
+        if(resultPrice){        //posso colocar só no if de baixo com um && antes da primeira comparação e tirar esse if
+            if(resultPrice.price * quantify !== totalPrice){
+                throw new Error("a quantidade e o total da compra devem estar com o cálculo correto")
+            }
+        }
+
+
+
+        const newPurchase:TPurchase = {userId, productId, quantify, totalPrice}
+        purchases.push(newPurchase)
+
+        res.status(201).send("Carrinho cadastrado com sucesso")
+    }catch(error:any){
+        console.log(error) // print do erro no terminal para facilitar o debug
+		res.status(400).send(error.message)
+    }
 })
 
 

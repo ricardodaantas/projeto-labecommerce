@@ -25,5 +25,71 @@ VALUES
     ("p004", "suco", 9.64, "bebidas"),
     ("p005", "maça", 2.12, "frutas");
 
+
+
+-- EXERCICIO 1 --
+
+-- Get all Users
+SELECT * FROM users;
+
+-- Get All Products
+SELECT * FROM products;
+
+-- Search Product by name
+SELECT * FROM products WHERE name = "feijão";
+
+-- Create User
+INSERT INTO users
+VALUES ("u003", "user3@email.com", "654321");
+
+-- Create User
+INSERT INTO products
+VALUES ("u006", "Pão", 12.50, "Café");
+
+
+--- EXERCICIO 2
+-- Get Products by id
+SELECT * FROM products 
+WHERE id = "p002";
+
+-- Delete User by id
+DELETE FROM users
+WHERE id = "u001";
+
+-- Delete Product by id
+DELETE FROM products
+WHERE id = "p001";
+
+-- Edit User by id
+UPDATE users
+SET password = "bananinha123"
+WHERE id = "p002";
+
+-- Edit Product by id
+UPDATE products
+SET price = 100.55, category = "teste"
+WHERE id = "p001";
+
 SELECT * FROM users;
 SELECT * FROM products;
+
+-- Exercício 3
+
+-- Get All Users
+-- retorna o resultado ordenado pela coluna email em ordem crescente
+SELECT * FROM users
+ORDER BY email ASC;
+
+-- Get All Products versão 1
+-- retorna o resultado ordenado pela coluna price em ordem crescente
+-- limite o resultado em 20 iniciando pelo primeiro item
+SELECT * FROM products
+ORDER BY price ASC
+LIMIT 20 OFFSET 0;
+
+-- Get All Products versão 2
+-- seleção de um intervalo de preços, por exemplo entre 100.00 e 300.00
+-- retorna os produtos com preços dentro do intervalo definido em ordem crescente
+SELECT * FROM products
+WHERE price >=  3 AND price <= 11
+ORDER BY price ASC;

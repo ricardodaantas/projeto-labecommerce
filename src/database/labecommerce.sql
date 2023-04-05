@@ -21,8 +21,17 @@ CREATE TABLE purchases(
     FOREIGN KEY (buyer_id) REFERENCES users(id)
 );
 
-SELECT * FROM purchases;
-DROP TABLE purchases;
+-- EXERCICIO 1
+CREATE TABLE purchases_products(
+    purchases_id TEXT NOT NULL,
+    product_id TEXT NOT NULL,
+    quantify INTEGER NOT NULL,
+    FOREIGN KEY (purchases_id) REFERENCES purchases(id)
+    FOREIGN KEY (product_id) REFERENCES products(id)
+);
+
+SELECT * FROM purchases_products;
+DROP TABLE purchases_products;
 
 INSERT INTO users 
 VALUES
@@ -37,7 +46,7 @@ VALUES
     ("p004", "suco", 9.64, "bebidas"),
     ("p005", "maça", 2.12, "frutas");
 
--- EXERCICIO 2
+
 INSERT INTO purchases (id, total_price, buyer_id)
 VALUES
     ("c001", 5.90, "u001"),
@@ -45,13 +54,27 @@ VALUES
     ("c003", 6.20, "u001"),
     ("c004", 9.64, "u001");
 
+
+-- EXERCICIO 2
+INSERT INTO purchases_products
+VALUES
+    ("c001", "p001", 5),
+    ("c002", "p002", 10),
+    ("c003", "p005", 6),
+    ("c004", "p003", 9);
+
+
+SELECT * FROM purchases_products
+INNER JOIN products
+ON purchases_products.product_id = products.id;
+
 UPDATE purchases 
 SET delivered_at = DATETIME()
 WHERE id = "c002";
 
 -- EXERCICIO 3
 
-SELECT id, buyer_id, email FROM purchases 
+SELECT * FROM purchases 
 INNER JOIN users 
 ON purchases.buyer_id = users.id;
 

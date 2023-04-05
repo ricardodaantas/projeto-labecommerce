@@ -12,6 +12,18 @@ CREATE TABLE products(
     category TEXT NOT NULL
 );
 
+CREATE TABLE purchases(
+    id TEXT PRIMARY KEY UNIQUE NOT NULL,
+    total_price REAL NOT NULL,
+    paid INTEGER NOT NULL DEFAULT(0),
+    delivered_at TEXT DEFAULT(DATETIME()),
+    buyer_id TEXT NOT NULL,
+    FOREIGN KEY (buyer_id) REFERENCES users(id)
+);
+
+SELECT * FROM purchases;
+DROP TABLE purchases;
+
 INSERT INTO users 
 VALUES
     ("u001", "user1@email.com", "123456"),
@@ -25,6 +37,23 @@ VALUES
     ("p004", "suco", 9.64, "bebidas"),
     ("p005", "maça", 2.12, "frutas");
 
+-- EXERCICIO 2
+INSERT INTO purchases (id, total_price, buyer_id)
+VALUES
+    ("c001", 5.90, "u001"),
+    ("c002", 10.50, "u001"),
+    ("c003", 6.20, "u001"),
+    ("c004", 9.64, "u001");
+
+UPDATE purchases 
+SET delivered_at = DATETIME()
+WHERE id = "c002";
+
+-- EXERCICIO 3
+
+SELECT id, buyer_id, email FROM purchases 
+INNER JOIN users 
+ON purchases.buyer_id = users.id;
 
 
 -- EXERCICIO 1 --

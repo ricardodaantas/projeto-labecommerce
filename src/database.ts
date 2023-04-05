@@ -30,13 +30,13 @@ export const products:TProduct[] = [
 
 export const purchases: TPurchase[] = [
     {
-        userId: "u001",
+        userId: "c001",
         productId: "p002",
         quantify: 5,
         totalPrice: 15
     },
     {
-        userId: "u002",
+        userId: "c002",
         productId: "p002",
         quantify: 3,
         totalPrice: 9

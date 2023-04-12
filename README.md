@@ -278,3 +278,6 @@ Retorna os dados de uma compra, incluindo a lista de produtos da mesma.
     ]
 }
 ```
+
+# Documentação para referência (como deve ficar)
+https://documenter.getpostman.com/view/21151478/2s8ZDeSdbz

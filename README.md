@@ -191,7 +191,7 @@ Edita um produto existente.
 ```
 
 ## Create purchase
-Cadastra um novo pedido.
+Cadastra um novo pedido. Como dica, o exercício 1 da aula de [Relações em SQL II](https://github.com/labenuexercicios/relacoes-sql-II-exercicios) é uma boa referência.
 ```typescript
 // Request
 // POST /purchases

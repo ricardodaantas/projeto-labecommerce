@@ -43,23 +43,18 @@ https://documenter.getpostman.com/view/26335727/2s93Y5Pf2Q
 <center></center>
 
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png" width="100" align="middle"> &emsp;Plataforma de desenvolvimento de software para construir aplicativos escaláveis ​​em JavaScript.</img> </p>
-<Br></br>
   
 <p>&ensp;<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png" width="80" align="middle">&emsp;&emsp;  Superset do JavaScript que adiciona tipos estáticos opcionais à linguagem.</img>    
 <Br></br>
-<Br></br>
   
-<img src="https://i.imgur.com/4JL9wiX.png" width="100" align="middle">&emsp;&#160;&#160;Framework de aplicativo para NodeJS que fornece uma camada abstrata para lidar com as </img>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;solicitações HTTP.
+<img src="https://i.imgur.com/4JL9wiX.png" width="100" align="middle">&emsp;&#160;&#160;Framework de aplicativo para NodeJS que fornece uma camada abstrata para lidar com as solicitações HTTP.</img>
 <Br></br>
 
-<img src="https://i.imgur.com/js3WxuF.png
-" width="100" align="middle">&emsp;&#160;&#160;Linguagens de consulta estruturada e um banco de dados relacional embutido, respectivamente, 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;usados ​​para gerenciar a persistência de dados do projeto.</img>  
-<Br></br>
-<img src="https://i.imgur.com/9GkFD1T.png
-" width="100" align="middle">&emsp;&emsp;Biblioteca de construção de consultas SQL para NodeJS que suporta vários bancos de dados.</img>   
-<Br></br>
+<img src="https://i.imgur.com/js3WxuF.png" width="100" align="middle">&emsp;&#160;&#160;Linguagens de consulta estruturada e um banco de dados relacional embutido, respectivamente, usados para gerenciar a 
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;persistência de dados do projeto.</img>
+
+<img src="https://i.imgur.com/9GkFD1T.png" width="100" align="middle">&emsp;&ensp;&nbsp;Biblioteca de construção de consultas SQL para NodeJS que suporta vários bancos de dados.</img>   
+
 &ensp;<img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/postman-icon.png" width="90" align="middle">&emsp;&emsp;Ambiente de desenvolvimento de API que permite testar APIs e criar solicitações HTTP.</img>
   
 
@@ -95,12 +90,15 @@ Para instalar o projeto que utiliza NodeJS, Typescript, Express, SQL e SQLite, K
 ## Colaboradores 🤝
 Acredito que todos aqueles que no decorrer do projeto me ajudaram ou pediram ajuda para desenvolvimento, meus agradecimentos:
 
-  **Arthur Felix;**
-   **Jaziel Bury;**
-   **Pedro Henrique;**
-   **Pedro "PEDRINHOmsb#5828";**
-   **Felício de Souza.**
+**Arthur Felix**
 
+**Felício de Souza**
+
+**Jaziel Bury**
+
+**Pedro Henrique**
+
+**Pedro Magno**
 ## Status do projeto 🎉
 Finalizado.
 

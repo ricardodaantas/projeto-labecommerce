@@ -19,7 +19,25 @@ O projeto também conta com uma documentação clara e objetiva, que descreve as
   
 
 Por fim, o LabeCommerce é um projeto completo e funcional que pode ser utilizado como base para o desenvolvimento de aplicações de comércio eletrônico em NodeJS.
-## Utilização
+## Funcionalidades
+A coleção LabeCommerce no Postman é uma coleção de endpoints de API para gerenciar uma plataforma de comércio eletrônico. Esta coleção inclui endpoints para gerenciar usuários, produtos e compras. A seguir estão os detalhes dos endpoints nesta coleção:
+
+-   **`Get All Users`**: este endpoint retorna todos os usuários cadastrados no sistema.
+-   **`Create User`**: este endpoint cria um novo usuário na plataforma.
+-   **`Create Product`**: este endpoint permite criar um novo produto na plataforma.
+-   **`Get all products 1`**: este endpoint retorna todos os produtos disponíveis na plataforma.
+-   **`Get all products 2 ( search product by name)`**: este endpoint retorna todos os produtos que correspondem ao nome do produto especificado.
+-   **`Edit product by id`**: este endpoint permite atualizar as informações de um produto existente com base no ID do produto.
+-   **`Create Purchase`**: este endpoint permite criar uma nova compra de um ou mais produtos.
+-   **`Delete purchase by id`**: este endpoint permite excluir uma compra existente com base no ID da compra.
+-   **`Get Purchase by id`**: este endpoint retorna informações sobre uma compra existente com base no ID da compra especificada.
+
+Em resumo, a coleção LabeCommerce oferece uma gama completa de endpoints de API para gerenciar usuários, produtos e compras em uma plataforma de comércio eletrônico. Esses endpoints podem ser usados ​​por desenvolvedores e outras partes interessadas para interagir com a plataforma por meio de chamadas de API bem definidas.
+
+A documentação completa está nesse link:
+https://documenter.getpostman.com/view/26335727/2s93Y5Pf2Q
+
+## Tecnologias utilizadas
 
   
 
@@ -75,6 +93,18 @@ Para instalar o projeto que utiliza NodeJS, Typescript, Express, SQL e SQLite, K
 
 **Instalação do Postman**: faça o download e instale o Postman em https://www.postman.com/downloads/.
 
+## Implementações futuras
+Nas proximas atualizações, iremos adicionar sistema de atutenticação (TOKEN) e a criação de codigos de ambiente seguro.
+## Colaboradores
+Acredito que todos aqueles que no decorrer do projeto me ajudaram ou pediram ajuda para desenvolvimento, meus agradecimentos:
+**Arthur Felix;
+Jaziel Bury;
+Pedro Henrique;
+Pedro "PEDRINHOmsb#5828";
+Felício de Souza.**
 
-Minha documentação do postman:
-https://documenter.getpostman.com/view/26335727/2s93Y5Pf2Q
+## Status do projeto
+Estará parado no momento. 
+
+
+

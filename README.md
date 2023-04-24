@@ -51,7 +51,7 @@ https://documenter.getpostman.com/view/26335727/2s93Y5Pf2Q
 <Br></br>
 
 <img src="https://i.imgur.com/js3WxuF.png" width="100" align="middle">&emsp;&#160;&#160;Linguagens de consulta estruturada e um banco de dados relacional embutido, respectivamente, usados para gerenciar a 
-&emsp;&emsp;&emsp;&emsp;persistência de dados do projeto.</img>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;persistência de dados do projeto.</img>
 
 <img src="https://i.imgur.com/9GkFD1T.png" width="100" align="middle">&emsp;&ensp;&nbsp;Biblioteca de construção de consultas SQL para NodeJS que suporta vários bancos de dados.</img>   
 

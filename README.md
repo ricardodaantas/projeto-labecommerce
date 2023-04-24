@@ -98,11 +98,11 @@ Nas proximas atualizações, iremos adicionar sistema de atutenticação (TOKEN)
 ## Colaboradores
 Acredito que todos aqueles que no decorrer do projeto me ajudaram ou pediram ajuda para desenvolvimento, meus agradecimentos:
 
-**Arthur Felix**
-**Jaziel Bury**
-**Pedro Henrique**
-**Pedro "PEDRINHOmsb#5828"**
-**Felício de Souza**
+**Arthur Felix;**
+**Jaziel Bury;**
+**Pedro Henrique;**
+**Pedro "PEDRINHOmsb#5828";**
+**Felício de Souza.**
 
 ## Status do projeto
 Estará parado no momento. 

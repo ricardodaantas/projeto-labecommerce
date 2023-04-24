@@ -2,7 +2,7 @@
 
   
 
-## Sobre esse projeto
+## Sobre esse projeto 📖
 
   
 
@@ -19,7 +19,7 @@ O projeto também conta com uma documentação clara e objetiva, que descreve as
   
 
 Por fim, o LabeCommerce é um projeto completo e funcional que pode ser utilizado como base para o desenvolvimento de aplicações de comércio eletrônico em NodeJS.
-## Funcionalidades
+## Funcionalidades 📋
 A coleção LabeCommerce no Postman é uma coleção de endpoints de API para gerenciar uma plataforma de comércio eletrônico. Esta coleção inclui endpoints para gerenciar usuários, produtos e compras. A seguir estão os detalhes dos endpoints nesta coleção:
 
 -   **`Get All Users`**: este endpoint retorna todos os usuários cadastrados no sistema.
@@ -37,34 +37,33 @@ Em resumo, a coleção LabeCommerce oferece uma gama completa de endpoints de AP
 A documentação completa está nesse link:
 https://documenter.getpostman.com/view/26335727/2s93Y5Pf2Q
 
-## Tecnologias utilizadas
+## Tecnologias utilizadas 💾
 
   
+<center></center>
 
-- **NodeJS**: plataforma de desenvolvimento de software para construir aplicativos escaláveis ​​em JavaScript.
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png" width="100" align="middle"> &emsp;Plataforma de desenvolvimento de software para construir aplicativos escaláveis ​​em JavaScript.</img> </p>
+<Br></br>
+  
+<p>&ensp;<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png" width="80" align="middle">&emsp;&emsp;  Superset do JavaScript que adiciona tipos estáticos opcionais à linguagem.</img>    
+<Br></br>
+<Br></br>
+  
+<img src="https://i.imgur.com/4JL9wiX.png" width="100" align="middle">&emsp;&#160;&#160;Framework de aplicativo para NodeJS que fornece uma camada abstrata para lidar com as </img>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;solicitações HTTP.
+<Br></br>
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/SQLite370.svg/1200px-SQLite370.svg.png
+" width="100" align="middle">&emsp;&#160;&#160;Linguagens de consulta estruturada e um banco de dados relacional embutido, respectivamente, 
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;usados ​​para gerenciar a persistência de dados do projeto.</img>  
+<Br></br>
+<img src="https://miro.medium.com/v2/resize:fit:1035/1*k0QFBnA2btydUOh7Lwc4wQ.png
+" width="100" align="middle">&emsp;&emsp;Biblioteca de construção de consultas SQL para NodeJS que suporta vários bancos de dados.</img>   
+<Br></br>
+&ensp;<img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/postman-icon.png" width="90" align="middle">&emsp;&emsp;Ambiente de desenvolvimento de API que permite testar APIs e criar solicitações HTTP.</img>
   
 
-- **Typescript**: superset do JavaScript que adiciona tipos estáticos opcionais à linguagem.
-
-  
-
-- **Express**: framework de aplicativo para NodeJS que fornece uma camada abstrata para lidar com as solicitações HTTP.
-
-  
-
-- **SQL e SQLite**: linguagens de consulta estruturada e um banco de dados relacional embutido, respectivamente, usados ​​para gerenciar a persistência de dados do projeto.
-
-  
-
-- **Knex**: biblioteca de construção de consultas SQL para NodeJS que suporta vários bancos de dados.
-
-  
-
-- **Postman**: ambiente de desenvolvimento de API que permite testar APIs e criar solicitações HTTP.
-  
-
-## Instalação
+## Instalação 🛠️
 
   
 
@@ -93,19 +92,17 @@ Para instalar o projeto que utiliza NodeJS, Typescript, Express, SQL e SQLite, K
 
 **Instalação do Postman**: faça o download e instale o Postman em https://www.postman.com/downloads/.
 
-## Implementações futuras
-Nas proximas atualizações, iremos adicionar sistema de atutenticação (TOKEN) e a criação de codigos de ambiente seguro.
-## Colaboradores
+## Colaboradores 🤝
 Acredito que todos aqueles que no decorrer do projeto me ajudaram ou pediram ajuda para desenvolvimento, meus agradecimentos:
 
-**Arthur Felix,**
-**Jaziel Bury,**
-**Pedro Henrique,**
-**Pedro "PEDRINHOmsb#5828",**
-**Felício de Souza.**
+  **Arthur Felix;**
+   **Jaziel Bury;**
+   **Pedro Henrique;**
+   **Pedro "PEDRINHOmsb#5828";**
+   **Felício de Souza.**
 
-## Status do projeto
-Estará parado no momento. 
+## Status do projeto 🎉
+Finalizado.
 
 
 

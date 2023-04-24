@@ -53,11 +53,11 @@ https://documenter.getpostman.com/view/26335727/2s93Y5Pf2Q
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;solicitações HTTP.
 <Br></br>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/SQLite370.svg/1200px-SQLite370.svg.png
+<img src="https://i.imgur.com/js3WxuF.png
 " width="100" align="middle">&emsp;&#160;&#160;Linguagens de consulta estruturada e um banco de dados relacional embutido, respectivamente, 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;usados ​​para gerenciar a persistência de dados do projeto.</img>  
 <Br></br>
-<img src="https://miro.medium.com/v2/resize:fit:1035/1*k0QFBnA2btydUOh7Lwc4wQ.png
+<img src="https://i.imgur.com/9GkFD1T.png
 " width="100" align="middle">&emsp;&emsp;Biblioteca de construção de consultas SQL para NodeJS que suporta vários bancos de dados.</img>   
 <Br></br>
 &ensp;<img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/postman-icon.png" width="90" align="middle">&emsp;&emsp;Ambiente de desenvolvimento de API que permite testar APIs e criar solicitações HTTP.</img>

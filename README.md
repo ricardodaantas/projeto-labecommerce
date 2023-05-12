@@ -1,106 +1,283 @@
-<h1  align="center">Projeto-LabeCommerce</h1>
+# Projeto labecommerce
 
-  
+É o primeiro projeto do back-end, onde praticamos toda a base de criação de uma API vinculada a um banco de dados real.<br>
+Ele tem uma particularidade: seus requisitos são implementados ao longo dos exercícios pós aula. Isso significa que caso você siga o desenvolvimento das aulas, quando chegar na data de entrega já terá um projeto funcional e quase pronto para entrega.
 
-## Sobre esse projeto 📖
+## Conteúdos abordados
 
-  
+- NodeJS
+- Typescript
+- Express
+- SQL e SQLite
+- Knex
+- Postman
 
-O projeto LabeCommerce é uma API de comércio eletrônico desenvolvida em NodeJS utilizando TypeScript, Express, Knex e SQLite. A API possui diversas funcionalidades, como cadastrar e buscar usuários, cadastrar, buscar e editar produtos, cadastrar compras e buscar informações sobre compras específicas.
+# Banco de dados
+![image](https://user-images.githubusercontent.com/29845719/214396608-ddcfd097-e615-44f9-acbe-f815f9abb83f.png)
+https://dbdiagram.io/d/63c6e8e5296d97641d7a4666
 
-  
+# Lista de requisitos
 
-A base de dados é gerenciada pelo Knex, que utiliza o SQLite como banco de dados.
+- Documentação Postman de todos os endpoints (obrigatória para correção)
 
-  
+- Endpoints
 
-O projeto também conta com uma documentação clara e objetiva, que descreve as funcionalidades disponíveis e como utilizá-las. Isso torna o desenvolvimento e a integração com outras aplicações mais fácil e rápida.
+    - [ ]  Get all users
+    - [ ]  Create user
+    - [ ]  Create product
+    - [ ]  Get all products funcionalidade 1
+    - [ ]  Get all products funcionalidade 2
+    - [ ]  Edit product by id
+    - [ ]  Create purchase
+    - [ ]  Delete purchase by id
+    - [ ]  Get purchase by id
 
-  
+- README.md
 
-Por fim, o LabeCommerce é um projeto completo e funcional que pode ser utilizado como base para o desenvolvimento de aplicações de comércio eletrônico em NodeJS.
-## Funcionalidades 📋
-A coleção LabeCommerce no Postman é uma coleção de endpoints de API para gerenciar uma plataforma de comércio eletrônico. Esta coleção inclui endpoints para gerenciar usuários, produtos e compras. A seguir estão os detalhes dos endpoints nesta coleção:
+# Exemplos de requisição
+Não precisa cadastrar o mesmo nome, email e quaisquer outros valores vistos aqui nos exemplos de saída. Porém, lembre-se de respeitar a estrutura pedida no banco de dados (nome das tabelas e colunas) e os nomes das propriedades na resposta da API.
 
--   **`Get All Users`**: este endpoint retorna todos os usuários cadastrados no sistema.
--   **`Create User`**: este endpoint cria um novo usuário na plataforma.
--   **`Create Product`**: este endpoint permite criar um novo produto na plataforma.
--   **`Get all products 1`**: este endpoint retorna todos os produtos disponíveis na plataforma.
--   **`Get all products 2 ( search product by name)`**: este endpoint retorna todos os produtos que correspondem ao nome do produto especificado.
--   **`Edit product by id`**: este endpoint permite atualizar as informações de um produto existente com base no ID do produto.
--   **`Create Purchase`**: este endpoint permite criar uma nova compra de um ou mais produtos.
--   **`Delete purchase by id`**: este endpoint permite excluir uma compra existente com base no ID da compra.
--   **`Get Purchase by id`**: este endpoint retorna informações sobre uma compra existente com base no ID da compra especificada.
+Colunas a mais na tabela não tem problema, por exemplo adicionar uma 'category' dentro da tabela 'products', mas a falta de uma coluna ou propriedade na resposta será considerada falha de implementação!
 
-Em resumo, a coleção LabeCommerce oferece uma gama completa de endpoints de API para gerenciar usuários, produtos e compras em uma plataforma de comércio eletrônico. Esses endpoints podem ser usados ​​por desenvolvedores e outras partes interessadas para interagir com a plataforma por meio de chamadas de API bem definidas.
+## Get all users
+Retorna todas as pessoas cadastradas.<br>
+Dica: atenção com o nome da propriedade createdAt! Ela deve vir em camelCase, apesar de estar em snake_case no banco de dados.
+```typescript
+// Request
+// GET /users
 
-A documentação completa está nesse link:
-https://documenter.getpostman.com/view/26335727/2s93Y5Pf2Q
+// Response
+// status 200 OK
+[
+    {
+        id: "u001",
+        name: "Fulano",
+        email: "fulano@email.com",
+        password: "fulano123",
+        createdAt: "2023-01-15 09:12:42"
+    },
+    {
+        id: "u002",
+        name: "Ciclana",
+        email: "ciclana@email.com",
+        password: "ciclana99",
+        createdAt: "2023-01-17 12:35:28"
+    }
+]
+```
 
-## Tecnologias utilizadas 💾
+## Create user
+Cadastra uma nova pessoa.
+```typescript
+// Request
+// POST /users
+// body JSON
+{
+    "id": "u003",
+    "name": "Astrodev",
+    "email": "astrodev@email.com",
+    "password": "astrodev00"
+}
 
-  
-<center></center>
+// Response
+// status 201 CREATED
+{
+    message: "Cadastro realizado com sucesso"
+}
+```
 
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png" width="100" align="middle"> &emsp;Plataforma de desenvolvimento de software para construir aplicativos escaláveis ​​em JavaScript.</img> </p>
-  
-<p>&ensp;<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png" width="80" align="middle">&emsp;&emsp;  Superset do JavaScript que adiciona tipos estáticos opcionais à linguagem.</img>    
-<Br></br>
-  
-<img src="https://i.imgur.com/4JL9wiX.png" width="100" align="middle">&emsp;&#160;&#160;Framework de aplicativo para NodeJS que fornece uma camada abstrata para lidar com as solicitações HTTP.</img>
-<Br></br>
+## Create product
+Cadastra um novo produto.
+```typescript
+// Request
+// POST /products
+// body JSON
+{
+    "id": "prod003",
+    "name": "Teclado gamer",
+    "price": 200,
+    "description": "Teclado mecânico com numpad",
+    "imageUrl": "https://picsum.photos/seed/Teclado%20gamer/400"
+}
 
-<img src="https://i.imgur.com/js3WxuF.png" width="100" align="middle">&emsp;&#160;&#160;Linguagens de consulta estruturada e um banco de dados relacional embutido, respectivamente, usados para gerenciar a 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;persistência de dados do projeto.</img>
+// Response
+// status 201 CREATED
+{
+    message: "Produto cadastrado com sucesso"
+}
+```
 
-<img src="https://i.imgur.com/9GkFD1T.png" width="100" align="middle">&emsp;&ensp;&nbsp;Biblioteca de construção de consultas SQL para NodeJS que suporta vários bancos de dados.</img>   
+## Get all products funcionalidade 1
+Retorna todos os produtos cadastrados.
+```typescript
+// Request
+// GET /products
 
-&ensp;<img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/postman-icon.png" width="90" align="middle">&emsp;&emsp;Ambiente de desenvolvimento de API que permite testar APIs e criar solicitações HTTP.</img>
-  
+// Response
+// status 200 OK
+[
+    {
+        id: "prod001",
+        name: "Mouse gamer",
+        price: 250,
+        description: "Melhor mouse do mercado!",
+        imageUrl: "https://picsum.photos/seed/Mouse%20gamer/400"
+    },
+    {
+        id: "prod002",
+        name: "Monitor",
+        price: 900,
+        description: "Monitor LED Full HD 24 polegadas",
+        imageUrl: "https://picsum.photos/seed/Monitor/400"
+    },
+    {
+        id: "prod003",
+        name: "Teclado gamer",
+        price: 200,
+        description: "Teclado mecânico com numpad",
+        imageUrl: "https://picsum.photos/seed/Teclado%20gamer/400"
+    }
+]
+```
 
-## Instalação 🛠️
+## Get all products funcionalidade 2
+Caso seja enviada uma query params (q) deve ser retornado o resultado da busca de produtos por nome.
+```typescript
+// Request
+// query params = q
+// GET /products?q=gamer
 
-  
+// Response
+// status 200 OK
+[
+    {
+        id: "prod001",
+        name: "Mouse gamer",
+        price: 250,
+        description: "Melhor mouse do mercado!",
+        imageUrl: "https://picsum.photos/seed/Mouse%20gamer/400"
+    },
+    {
+        id: "prod003",
+        name: "Teclado gamer",
+        price: 200,
+        description: "Teclado mecânico com numpad",
+        imageUrl: "https://picsum.photos/seed/Teclado%20gamer/400"
+    }
+]
+```
 
-Para instalar o projeto que utiliza NodeJS, Typescript, Express, SQL e SQLite, Knex e Postman, siga as seguintes etapas:
+## Edit product by id
+Edita um produto existente.
+```typescript
+// Request
+// path params = :id
 
-  
+// PUT /products/prod003
+// body JSON
+{
+    "id": "prod0033",
+    "name": "Teclado gamer RGB",
+    "price": 300,
+    "description": "Teclado mecânico com RGB e numpad",
+    "imageUrl": "https://picsum.photos/seed/Teclado%20gamer%20RGB/400"
+}
 
-<b>Instalação do NodeJS</b>: faça o download do NodeJS em https://nodejs.org/en/download/ e instale-o seguindo as instruções do instalador.  
-  
+// Response
+// status 200 OK
+{
+    message: "Produto atualizado com sucesso"
+}
+```
 
-<b>Instalação do Typescript</b>: abra o terminal ou prompt de comando e digite o comando `npm install -g typescript`. Isso instalará o Typescript globalmente em sua máquina.
+## Create purchase
+Cadastra um novo pedido. Como dica, o exercício 1 da aula de [Relações em SQL II](https://github.com/labenuexercicios/relacoes-sql-II-exercicios) é uma boa referência.
+```typescript
+// Request
+// POST /purchases
+// body JSON
+{
+    "id": "pur001",
+    "buyer": "u001",
+    "totalPrice": 1400,
+    "products": [
+        {
+            "id": "prod001",
+            "name": "Mouse gamer",
+            "price": 250,
+            "description": "Melhor mouse do mercado!",
+            "imageUrl": "https://picsum.photos/seed/Mouse%20gamer/400",
+            "quantity": 2
+        },
+        {
+            "id": "prod002",
+            "name": "Monitor",
+            "price": 900,
+            "description": "Monitor LED Full HD 24 polegadas",
+            "imageUrl": "https://picsum.photos/seed/Monitor/400",
+            "quantity": 1
+        }
+    ]
+}
 
-  
+// Response
+// status 201 CREATED
+{
+    message: "Pedido realizado com sucesso"
+}
+```
 
-**Criação do projeto**: crie uma pasta para o projeto e abra o terminal ou prompt de comando na pasta criada. Em seguida, digite o comando `npm init -y`. Isso criará um arquivo package.json padrão na pasta do projeto.
+## Delete purchase by id
+Deleta um pedido existente.
+```typescript
+// Request
+// path params = :id
+// DELETE /purchases/pur002
 
-  
+// Response
+// status 200 OK
+{
+    message: "Pedido cancelado com sucesso"
+}
+```
 
-**Instalação do Express e SQLite**: digite o comando `npm install express sqlite3 @types/express @types/sqlite3` no terminal ou prompt de comando na pasta do projeto.
+## Get purchase by id
+Retorna os dados de uma compra, incluindo a lista de produtos da mesma.
+```typescript
+// Request
+// path params = :id
+// GET /purchases/pur001
 
-  
+// Response
+// status 200 OK
+{
+    purchaseId: "pur001",
+    buyerId: "u001",
+    buyerName: "Fulano",
+    buyerEmail: "fulano@email.com",
+    totalPrice: 1400,
+    createdAt: "2023-01-15 16:24:54",
+    paid: 0,
+    products: [
+        {
+            id: "prod001",
+            name: "Mouse gamer",
+            price: 250,
+            description: "Melhor mouse do mercado!",
+            imageUrl: "https://picsum.photos/seed/Mouse%20gamer/400",
+            quantity: 2
+        },
+        {
+            id: "prod002",
+            name: "Monitor",
+            price: 900,
+            description: "Monitor LED Full HD 24 polegadas",
+            imageUrl: "https://picsum.photos/seed/Monitor/400",
+            quantity: 1
+        }
+    ]
+}
+```
 
-**Instalação do Knex**: digite o comando `npm install knex @types/knex sqlite3` no terminal ou prompt de comando na pasta do projeto.  
-
-**Configuração do Knex**: crie um arquivo knexfile.js na raiz do projeto com as configurações do banco de dados. Em seguida, crie um arquivo database.ts na pasta src com as configurações do Knex para acessar o banco de dados.  
-
-**Instalação do Postman**: faça o download e instale o Postman em https://www.postman.com/downloads/.
-
-## Colaboradores 🤝
-Acredito que todos aqueles que no decorrer do projeto me ajudaram ou pediram ajuda para desenvolvimento, meus agradecimentos:
-
-**Arthur Felix**
-
-**Felício de Souza**
-
-**Jaziel Bury**
-
-**Pedro Henrique**
-
-**Pedro Magno**
-## Status do projeto 🎉
-Finalizado.
-
-
-
+# Documentação para referência (como deve ficar)
+https://documenter.getpostman.com/view/21151478/2s8ZDeSdbz

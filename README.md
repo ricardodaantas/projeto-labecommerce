@@ -13,6 +13,47 @@ Ele tem uma particularidade: seus requisitos são implementados ao longo dos exe
 - Postman
 
 # Banco de dados
+O banco de dados deve conter quatro tabelas:
+
+## Tabelas de Usuários:
+###Nome da Tabela:
+users
+###Nome das colunas
+- id
+- name
+- email
+- password
+- created_at
+<br>
+###Tabela de Produtos
+###Nome da Tabela:
+products
+###Nome das colunas
+- id 
+- name
+- price
+- description
+- image_url
+<br>
+###Tabela de Registro de Compras
+###Nome da Tabela:
+purchases
+###Nome das colunas
+- id 
+- buyer
+- total_price
+- created_at
+- paid
+<br>
+###Tabela de Registro de Produtos Comprados
+###Nome da Tabela:
+purchases_products
+###Nome das colunas
+- id
+- purchase_id
+- product_id
+- quatity
+
 ![image](https://user-images.githubusercontent.com/29845719/214396608-ddcfd097-e615-44f9-acbe-f815f9abb83f.png)
 https://dbdiagram.io/d/63c6e8e5296d97641d7a4666
 

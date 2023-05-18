@@ -2,9 +2,8 @@
 
 É o primeiro projeto do back-end, onde praticamos toda a base de criação de uma API vinculada a um banco de dados real.<br><br>
 Ele tem uma particularidade: seus requisitos são implementados ao longo dos exercícios pós aula. Isso significa que caso você siga o desenvolvimento das aulas, quando chegar na data de entrega já terá um projeto funcional e quase pronto para entrega.
-
-## Conteúdos abordados
-
+<br>
+### Conteúdos abordados
 - NodeJS
 - Typescript
 - Express
@@ -12,47 +11,52 @@ Ele tem uma particularidade: seus requisitos são implementados ao longo dos exe
 - Knex
 - Postman
 
-# Banco de dados
-O banco de dados deve conter quatro tabelas:
+# ⚠⚠⚠ Importante!!! ⚠⚠⚠
+Para critérios de correção serão considerados rigorosamente a nomenclatura de: Tabelas, colunas e caminhos(path) das requisições. Portando, siga o padrão de nomenclaturas apresentado logo abaixo.
 
-## Tabelas de Usuários:
-###Nome da Tabela:
-users
-###Nome das colunas
+## Banco de dados 🎲🎲
+O banco de dados deve conter obrigatóriamente quatro tabelas:
+
+## Tabelas de Usuários: 
+### Nome da Tabela:
+- users
+### Nome das colunas
 - id
 - name
 - email
 - password
 - created_at
-<br>
-###Tabela de Produtos
-###Nome da Tabela:
-products
-###Nome das colunas
+
+## Tabela de Produtos 🛒🛒
+### Nome da Tabela:
+- products
+### Nome das colunas
 - id 
 - name
 - price
 - description
 - image_url
-<br>
-###Tabela de Registro de Compras
-###Nome da Tabela:
-purchases
-###Nome das colunas
+
+### Tabela de Registro de Compras 💸💸
+
+### Nome da Tabela:
+- purchases
+### Nome das colunas
 - id 
 - buyer
 - total_price
 - created_at
 - paid
-<br>
-###Tabela de Registro de Produtos Comprados
-###Nome da Tabela:
+
+## Tabela de Registro de Produtos Comprados 🧾🧾
+### Nome da Tabela:
 purchases_products
-###Nome das colunas
-- id
+### Nome das colunas
 - purchase_id
 - product_id
 - quatity
+
+Para auxiliá-los, considere a imagem abaixo.  mostra a relação entre as tabelas
 
 ![image](https://user-images.githubusercontent.com/29845719/214396608-ddcfd097-e615-44f9-acbe-f815f9abb83f.png)
 https://dbdiagram.io/d/63c6e8e5296d97641d7a4666

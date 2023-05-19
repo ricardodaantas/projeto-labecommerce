@@ -55,17 +55,24 @@ purchases_products
 - purchase_id
 - product_id
 - quatity
+--------------------------
+<br>
 
-Para auxiliá-los, considere a imagem abaixo.  mostra a relação entre as tabelas
+#### Para realizar a modelagem do seu banco de dados e das tabelas, considere a imagem a baixo. 
+
+Nela são mostradas as relações entre as tabelas :
 
 ![image](https://user-images.githubusercontent.com/29845719/214396608-ddcfd097-e615-44f9-acbe-f815f9abb83f.png)
 https://dbdiagram.io/d/63c6e8e5296d97641d7a4666
 
-# Lista de requisitos
+<br>
+---------------
 
-- Documentação Postman de todos os endpoints (obrigatória para correção)
+# Lista de requisitos - Obrigatórios
 
-- Endpoints
+### 1. Documentação no Postman de todos os endpoints (obrigatória para correção), descrevendo os endpoints e colocando os exemplos de respostas 
+
+### 2. Implementar os Endpoints :
 
     - [ ]  Get all users
     - [ ]  Create user
@@ -77,12 +84,18 @@ https://dbdiagram.io/d/63c6e8e5296d97641d7a4666
     - [ ]  Delete purchase by id
     - [ ]  Get purchase by id
 
-- README.md
+### 3. Criar o arquivo  README.md , explicando seu projeto com prints das respostas
+
+Aqui está uma Documentação para referência (como deve ficar)
+https://documenter.getpostman.com/view/21151478/2s8ZDeSdbz
+
+-------------------
 
 # Exemplos de requisição
-Não precisa cadastrar o mesmo nome, email e quaisquer outros valores vistos aqui nos exemplos de saída. Porém, lembre-se de respeitar a estrutura pedida no banco de dados (nome das tabelas e colunas) e os nomes das propriedades na resposta da API.
 
-Colunas a mais na tabela não tem problema, por exemplo adicionar uma 'category' dentro da tabela 'products', mas a falta de uma coluna ou propriedade na resposta será considerada falha de implementação!
+**Não precisa cadastrar o mesmo nome, email e quaisquer outros valores vistos aqui nos exemplos de saída. Porém, deve-se respeitar rigorosamente a estrutura pedida no banco de dados (nome das tabelas e colunas), nomes das propriedades na resposta da API e caminho dos endpoints**
+
+-------------------
 
 ## Get all users
 Retorna todas as pessoas cadastradas.<br>
@@ -111,6 +124,9 @@ Dica: atenção com o nome da propriedade createdAt! Ela deve vir em camelCase, 
 ]
 ```
 
+<br>
+
+-------------------------
 ## Create user
 Cadastra uma nova pessoa.
 ```typescript
@@ -130,6 +146,8 @@ Cadastra uma nova pessoa.
     message: "Cadastro realizado com sucesso"
 }
 ```
+---------------
+<br>
 
 ## Create product
 Cadastra um novo produto.
@@ -151,6 +169,9 @@ Cadastra um novo produto.
     message: "Produto cadastrado com sucesso"
 }
 ```
+
+---------------------
+<br>
 
 ## Get all products funcionalidade 1
 Retorna todos os produtos cadastrados.
@@ -185,6 +206,9 @@ Retorna todos os produtos cadastrados.
 ]
 ```
 
+---------------------------
+<br>
+
 ## Get all products funcionalidade 2
 Caso seja enviada uma query params (q) deve ser retornado o resultado da busca de produtos por nome.
 ```typescript
@@ -212,6 +236,9 @@ Caso seja enviada uma query params (q) deve ser retornado o resultado da busca d
 ]
 ```
 
+---------------------------
+<br>
+
 ## Edit product by id
 Edita um produto existente.
 ```typescript
@@ -234,6 +261,9 @@ Edita um produto existente.
     message: "Produto atualizado com sucesso"
 }
 ```
+
+---------------------------
+<br>
 
 ## Create purchase
 Cadastra um novo pedido. Como dica, o exercício 1 da aula de [Relações em SQL II](https://github.com/labenuexercicios/relacoes-sql-II-exercicios) é uma boa referência.
@@ -272,6 +302,10 @@ Cadastra um novo pedido. Como dica, o exercício 1 da aula de [Relações em SQL
 }
 ```
 
+
+---------------------------
+<br>
+
 ## Delete purchase by id
 Deleta um pedido existente.
 ```typescript
@@ -285,6 +319,10 @@ Deleta um pedido existente.
     message: "Pedido cancelado com sucesso"
 }
 ```
+
+
+---------------------------
+<br>
 
 ## Get purchase by id
 Retorna os dados de uma compra, incluindo a lista de produtos da mesma.
@@ -324,5 +362,8 @@ Retorna os dados de uma compra, incluindo a lista de produtos da mesma.
 }
 ```
 
-# Documentação para referência (como deve ficar)
-https://documenter.getpostman.com/view/21151478/2s8ZDeSdbz
+
+---------------------------
+<br>
+
+

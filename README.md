@@ -15,9 +15,11 @@ Ele tem uma particularidade: seus requisitos são implementados ao longo dos exe
 Para critérios de correção serão considerados rigorosamente a nomenclatura de: Tabelas, colunas e caminhos(path) das requisições. Portando, siga o padrão de nomenclaturas apresentado logo abaixo.
 
 ## Banco de dados 🎲🎲
+O nome das tabelas e das colunas devem ser em letras minúsculas, sem acento, sem caracteres especiais e em _snake_case_(caso sejas palavras compostas. exp.: arco_iris). Por isso, siga restritamente a nomeclatura proposta!
+
 O banco de dados deve conter obrigatóriamente quatro tabelas:
 
-## Tabelas de Usuários: 
+## Tabela de Usuários: 
 ### Nome da Tabela:
 - users
 ### Nome das colunas
@@ -54,7 +56,7 @@ purchases_products
 ### Nome das colunas
 - purchase_id
 - product_id
-- quatity
+- quantity
 --------------------------
 <br>
 
@@ -68,11 +70,19 @@ https://dbdiagram.io/d/63c6e8e5296d97641d7a4666
 <br>
 ---------------
 
+## Caminhos das Requisições (Paths) 🛣🛣
+Os caminhos devem ser definidos em letras minúsculas, sem acento e sem caracteres especiais. Siga conforme o modelo de documentação proposto.
+
+### Requisições de Usuários
+- /users
+### Requisições de Produtos
+- /products
+### Requisições de Compras
+- /purchases
+---------------
 # Lista de requisitos - Obrigatórios
 
-### 1. Documentação no Postman de todos os endpoints (obrigatória para correção), descrevendo os endpoints e colocando os exemplos de respostas 
-
-### 2. Implementar os Endpoints :
+### 1. Implementar os Endpoints :
 
     - [ ]  Get all users
     - [ ]  Create user
@@ -83,6 +93,8 @@ https://dbdiagram.io/d/63c6e8e5296d97641d7a4666
     - [ ]  Create purchase
     - [ ]  Delete purchase by id
     - [ ]  Get purchase by id
+
+### 2. Documentação no Postman de todos os endpoints (obrigatória para correção), descrevendo os endpoints e colocando os exemplos de respostas 
 
 ### 3. Criar o arquivo  README.md , explicando seu projeto com prints das respostas
 
@@ -210,11 +222,11 @@ Retorna todos os produtos cadastrados.
 <br>
 
 ## Get all products funcionalidade 2
-Caso seja enviada uma query params (q) deve ser retornado o resultado da busca de produtos por nome.
+Caso seja enviada uma query params (name) deve ser retornado o resultado da busca de produtos que contenham o _"name"_ informado em seu nome.
 ```typescript
 // Request
-// query params = q
-// GET /products?q=gamer
+// query params = name
+// GET /products?name=gamer
 
 // Response
 // status 200 OK
@@ -274,22 +286,13 @@ Cadastra um novo pedido. Como dica, o exercício 1 da aula de [Relações em SQL
 {
     "id": "pur001",
     "buyer": "u001",
-    "totalPrice": 1400,
     "products": [
         {
             "id": "prod001",
-            "name": "Mouse gamer",
-            "price": 250,
-            "description": "Melhor mouse do mercado!",
-            "imageUrl": "https://picsum.photos/seed/Mouse%20gamer/400",
             "quantity": 2
         },
         {
             "id": "prod002",
-            "name": "Monitor",
-            "price": 900,
-            "description": "Monitor LED Full HD 24 polegadas",
-            "imageUrl": "https://picsum.photos/seed/Monitor/400",
             "quantity": 1
         }
     ]

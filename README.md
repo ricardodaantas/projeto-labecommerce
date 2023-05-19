@@ -2,9 +2,8 @@
 
 É o primeiro projeto do back-end, onde praticamos toda a base de criação de uma API vinculada a um banco de dados real.<br><br>
 Ele tem uma particularidade: seus requisitos são implementados ao longo dos exercícios pós aula. Isso significa que caso você siga o desenvolvimento das aulas, quando chegar na data de entrega já terá um projeto funcional e quase pronto para entrega.
-
-## Conteúdos abordados
-
+<br>
+### Conteúdos abordados
 - NodeJS
 - Typescript
 - Express
@@ -12,15 +11,78 @@ Ele tem uma particularidade: seus requisitos são implementados ao longo dos exe
 - Knex
 - Postman
 
-# Banco de dados
+# ⚠⚠⚠ Importante!!! ⚠⚠⚠
+Para critérios de correção serão considerados rigorosamente a nomenclatura de: Tabelas, colunas e caminhos(path) das requisições. Portando, siga o padrão de nomenclaturas apresentado logo abaixo.
+
+## Banco de dados 🎲🎲
+O nome das tabelas e das colunas devem ser em letras minúsculas, sem acento, sem caracteres especiais e em _snake_case_(caso sejas palavras compostas. exp.: arco_iris). Por isso, siga restritamente a nomeclatura proposta!
+
+O banco de dados deve conter obrigatóriamente quatro tabelas:
+
+## Tabela de Usuários: 
+### Nome da Tabela:
+- users
+### Nome das colunas
+- id
+- name
+- email
+- password
+- created_at
+
+## Tabela de Produtos 🛒🛒
+### Nome da Tabela:
+- products
+### Nome das colunas
+- id 
+- name
+- price
+- description
+- image_url
+
+### Tabela de Registro de Compras 💸💸
+
+### Nome da Tabela:
+- purchases
+### Nome das colunas
+- id 
+- buyer
+- total_price
+- created_at
+- paid
+
+## Tabela de Registro de Produtos Comprados 🧾🧾
+### Nome da Tabela:
+purchases_products
+### Nome das colunas
+- purchase_id
+- product_id
+- quantity
+--------------------------
+<br>
+
+#### Para realizar a modelagem do seu banco de dados e das tabelas, considere a imagem a baixo. 
+
+Nela são mostradas as relações entre as tabelas :
+
 ![image](https://user-images.githubusercontent.com/29845719/214396608-ddcfd097-e615-44f9-acbe-f815f9abb83f.png)
 https://dbdiagram.io/d/63c6e8e5296d97641d7a4666
 
-# Lista de requisitos
+<br>
+---------------
 
-- Documentação Postman de todos os endpoints (obrigatória para correção)
+## Caminhos das Requisições (Paths) 🛣🛣
+Os caminhos devem ser definidos em letras minúsculas, sem acento e sem caracteres especiais. Siga conforme o modelo de documentação proposto.
 
-- Endpoints
+### Requisições de Usuários
+- /users
+### Requisições de Produtos
+- /products
+### Requisições de Compras
+- /purchases
+---------------
+# Lista de requisitos - Obrigatórios
+
+### 1. Implementar os Endpoints :
 
     - [ ]  Get all users
     - [ ]  Create user
@@ -32,12 +94,20 @@ https://dbdiagram.io/d/63c6e8e5296d97641d7a4666
     - [ ]  Delete purchase by id
     - [ ]  Get purchase by id
 
-- README.md
+### 2. Documentação no Postman de todos os endpoints (obrigatória para correção), descrevendo os endpoints e colocando os exemplos de respostas 
+
+### 3. Criar o arquivo  README.md , explicando seu projeto com prints das respostas
+
+Aqui está uma Documentação para referência (como deve ficar)
+https://documenter.getpostman.com/view/21151478/2s8ZDeSdbz
+
+-------------------
 
 # Exemplos de requisição
-Não precisa cadastrar o mesmo nome, email e quaisquer outros valores vistos aqui nos exemplos de saída. Porém, lembre-se de respeitar a estrutura pedida no banco de dados (nome das tabelas e colunas) e os nomes das propriedades na resposta da API.
 
-Colunas a mais na tabela não tem problema, por exemplo adicionar uma 'category' dentro da tabela 'products', mas a falta de uma coluna ou propriedade na resposta será considerada falha de implementação!
+**Não precisa cadastrar o mesmo nome, email e quaisquer outros valores vistos aqui nos exemplos de saída. Porém, deve-se respeitar rigorosamente a estrutura pedida no banco de dados (nome das tabelas e colunas), nomes das propriedades na resposta da API e caminho dos endpoints**
+
+-------------------
 
 ## Get all users
 Retorna todas as pessoas cadastradas.<br>
@@ -66,6 +136,9 @@ Dica: atenção com o nome da propriedade createdAt! Ela deve vir em camelCase, 
 ]
 ```
 
+<br>
+
+-------------------------
 ## Create user
 Cadastra uma nova pessoa.
 ```typescript
@@ -85,6 +158,8 @@ Cadastra uma nova pessoa.
     message: "Cadastro realizado com sucesso"
 }
 ```
+---------------
+<br>
 
 ## Create product
 Cadastra um novo produto.
@@ -106,6 +181,9 @@ Cadastra um novo produto.
     message: "Produto cadastrado com sucesso"
 }
 ```
+
+---------------------
+<br>
 
 ## Get all products funcionalidade 1
 Retorna todos os produtos cadastrados.
@@ -140,12 +218,15 @@ Retorna todos os produtos cadastrados.
 ]
 ```
 
+---------------------------
+<br>
+
 ## Get all products funcionalidade 2
-Caso seja enviada uma query params (q) deve ser retornado o resultado da busca de produtos por nome.
+Caso seja enviada uma query params (name) deve ser retornado o resultado da busca de produtos que contenham o _"name"_ informado em seu nome.
 ```typescript
 // Request
-// query params = q
-// GET /products?q=gamer
+// query params = name
+// GET /products?name=gamer
 
 // Response
 // status 200 OK
@@ -166,6 +247,9 @@ Caso seja enviada uma query params (q) deve ser retornado o resultado da busca d
     }
 ]
 ```
+
+---------------------------
+<br>
 
 ## Edit product by id
 Edita um produto existente.
@@ -190,6 +274,9 @@ Edita um produto existente.
 }
 ```
 
+---------------------------
+<br>
+
 ## Create purchase
 Cadastra um novo pedido. Como dica, o exercício 1 da aula de [Relações em SQL II](https://github.com/labenuexercicios/relacoes-sql-II-exercicios) é uma boa referência.
 ```typescript
@@ -199,22 +286,13 @@ Cadastra um novo pedido. Como dica, o exercício 1 da aula de [Relações em SQL
 {
     "id": "pur001",
     "buyer": "u001",
-    "totalPrice": 1400,
     "products": [
         {
             "id": "prod001",
-            "name": "Mouse gamer",
-            "price": 250,
-            "description": "Melhor mouse do mercado!",
-            "imageUrl": "https://picsum.photos/seed/Mouse%20gamer/400",
             "quantity": 2
         },
         {
             "id": "prod002",
-            "name": "Monitor",
-            "price": 900,
-            "description": "Monitor LED Full HD 24 polegadas",
-            "imageUrl": "https://picsum.photos/seed/Monitor/400",
             "quantity": 1
         }
     ]
@@ -226,6 +304,10 @@ Cadastra um novo pedido. Como dica, o exercício 1 da aula de [Relações em SQL
     message: "Pedido realizado com sucesso"
 }
 ```
+
+
+---------------------------
+<br>
 
 ## Delete purchase by id
 Deleta um pedido existente.
@@ -240,6 +322,10 @@ Deleta um pedido existente.
     message: "Pedido cancelado com sucesso"
 }
 ```
+
+
+---------------------------
+<br>
 
 ## Get purchase by id
 Retorna os dados de uma compra, incluindo a lista de produtos da mesma.
@@ -279,5 +365,8 @@ Retorna os dados de uma compra, incluindo a lista de produtos da mesma.
 }
 ```
 
-# Documentação para referência (como deve ficar)
-https://documenter.getpostman.com/view/21151478/2s8ZDeSdbz
+
+---------------------------
+<br>
+
+

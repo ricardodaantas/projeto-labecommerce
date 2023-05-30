@@ -63,7 +63,7 @@ purchases_products
 
 Nela são mostradas as relações entre as tabelas :
 
-![image](https://user-images.githubusercontent.com/29845719/214396608-ddcfd097-e615-44f9-acbe-f815f9abb83f.png)
+![image](https://github.com/labenuexercicios/projeto-labecommerce/assets/29845719/b446bbb0-bc9c-42d9-be04-b9ce1d605bd4)
 https://dbdiagram.io/d/63c6e8e5296d97641d7a4666
 
 <br>

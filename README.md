@@ -81,6 +81,8 @@ Os caminhos devem ser definidos em letras minúsculas, sem acento e sem caracter
 ---------------
 # Lista de requisitos - Obrigatórios
 
+### 0. Tipar os dados
+
 ### 1. Implementar os Endpoints :
 
     - [ ]  Get all users

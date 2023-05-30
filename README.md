@@ -48,7 +48,6 @@ O banco de dados deve conter obrigatóriamente quatro tabelas:
 - buyer
 - total_price
 - created_at
-- paid
 
 ## Tabela de Registro de Produtos Comprados 🧾🧾
 ### Nome da Tabela:
@@ -343,7 +342,6 @@ Retorna os dados de uma compra, incluindo a lista de produtos da mesma.
     buyerEmail: "fulano@email.com",
     totalPrice: 1400,
     createdAt: "2023-01-15 16:24:54",
-    paid: 0,
     products: [
         {
             id: "prod001",

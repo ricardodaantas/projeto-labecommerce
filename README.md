@@ -81,7 +81,8 @@ Os caminhos devem ser definidos em letras minúsculas, sem acento e sem caracter
 ---------------
 # Lista de requisitos - Obrigatórios
 
-### 0. Tipar os dados
+### 0. Tipar as entidades
+É essencial utilizar o poder de tipagem do typescript! Evite ao máximo o uso do any (apesar de não ser errado utilizá-lo em casos específicos).
 
 ### 1. Implementar os Endpoints :
 

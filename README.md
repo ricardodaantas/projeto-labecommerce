@@ -110,7 +110,7 @@ https://documenter.getpostman.com/view/21151478/2s8ZDeSdbz
 
 # Exemplos de requisição
 
-**Não precisa cadastrar o mesmo nome, email e quaisquer outros valores vistos aqui nos exemplos de saída. Porém, deve-se respeitar rigorosamente a estrutura pedida no banco de dados (nome das tabelas e colunas), nomes das propriedades na resposta da API e caminho dos endpoints**
+**Não precisa cadastrar o mesmo nome, email e quaisquer outros valores vistos aqui nos exemplos de saída. Porém, deve-se respeitar rigorosamente a estrutura pedida no banco de dados (nome das tabelas e colunas), nomes das propriedades do corpo e da resposta da API, além do caminho dos endpoints**
 
 -------------------
 

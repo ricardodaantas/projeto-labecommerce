@@ -93,8 +93,7 @@ As requisições também devem respeitar o que é esperado, você pode confirmar
     - [ ]  Get all users
     - [ ]  Create user
     - [ ]  Create product
-    - [ ]  Get all products funcionalidade 1
-    - [ ]  Get all products funcionalidade 2
+    - [ ]  Get all products funcionalidades 1 e 2
     - [ ]  Edit product by id
     - [ ]  Create purchase
     - [ ]  Delete purchase by id

@@ -81,10 +81,14 @@ Os caminhos devem ser definidos em letras minúsculas, sem acento e sem caracter
 ---------------
 # Lista de requisitos - Obrigatórios
 
-### 0. Tipar as entidades
-É essencial utilizar o poder de tipagem do typescript! Evite ao máximo o uso do any (apesar de não ser errado utilizá-lo em casos específicos).
+### 1. Estruturar os dados como planejado
+O banco de dados deve possuir as tabelas e colunas conforme o diagrama.
+- é um simulado de requerimentos em um projeto real e erros de implementação nesse nível deixarão o projeto inválido.
 
-### 1. Implementar os Endpoints :
+As requisições também devem respeitar o que é esperado, você pode confirmar as estruturas vendo os exemplos de cada endpoint.
+- garanta que tanto o body, quanto a resposta e seu status estejam de acordo com o que foi planejado
+
+### 2. Implementar os Endpoints :
 
     - [ ]  Get all users
     - [ ]  Create user
@@ -96,9 +100,9 @@ Os caminhos devem ser definidos em letras minúsculas, sem acento e sem caracter
     - [ ]  Delete purchase by id
     - [ ]  Get purchase by id
 
-### 2. Documentação no Postman de todos os endpoints (obrigatória para correção), descrevendo os endpoints e colocando os exemplos de respostas 
+### 3. Documentação no Postman de todos os endpoints (obrigatória para correção), descrevendo os endpoints e colocando os exemplos de respostas 
 
-### 3. Criar o arquivo  README.md , explicando seu projeto com prints das respostas
+### 4. Criar o arquivo  README.md , explicando seu projeto com prints das respostas
 
 Aqui está uma Documentação para referência (como deve ficar)
 https://documenter.getpostman.com/view/21151478/2s8ZDeSdbz

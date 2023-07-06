@@ -5,12 +5,15 @@ Ele tem uma particularidade: seus requisitos são implementados ao longo dos exe
 
 <details>
 <summary>O que fazer nas sexta-feiras já que o projeto é feito durante a semana com os exercícios pós-aula?</summary>
+
+```
 - rever aulas que você não pôde assistir
 - fazer exercícios que você deixou para trás
 - rever conteúdos que você está com dificuldade
 - praticar lógica de programação
-- [CodeWars](https://www.codewars.com/)
-- [LeetCode](https://leetcode.com/)
+    - https://www.codewars.com/)
+    - https://leetcode.com/)
+```
 </details>
 
 <br>

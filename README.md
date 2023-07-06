@@ -1,7 +1,18 @@
 # Projeto labecommerce
 
 É o primeiro projeto do back-end, onde praticamos toda a base de criação de uma API vinculada a um banco de dados real.<br><br>
-Ele tem uma particularidade: seus requisitos são implementados ao longo dos exercícios pós aula. Isso significa que caso você siga o desenvolvimento das aulas, quando chegar na data de entrega já terá um projeto funcional e quase pronto para entrega.
+Ele tem uma particularidade: seus requisitos são implementados ao longo dos exercícios pós aula. Isso significa que caso você siga o desenvolvimento das aulas, quando chegar na data de entrega já terá um projeto funcional.
+
+<details>
+<summary>O que fazer nas sexta-feiras já que o projeto é feito durante a semana com os exercícios pós-aula?</summary>
+    - rever aulas que você não pôde assistir
+    - fazer exercícios que você deixou para trás
+    - rever conteúdos que você está com dificuldade
+    - praticar lógica de programação
+        - [CodeWars](https://www.codewars.com/)
+        - [LeetCode](https://leetcode.com/)
+</details>
+
 <br>
 ### Conteúdos abordados
 - NodeJS

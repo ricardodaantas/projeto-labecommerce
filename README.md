@@ -8,8 +8,11 @@ Ele tem uma particularidade: seus requisitos são implementados ao longo dos exe
 
 ```
 - rever aulas que você não pôde assistir
+
 - fazer exercícios que você deixou para trás
+
 - rever conteúdos que você está com dificuldade
+
 - praticar lógica de programação
     - https://www.codewars.com/
     - https://leetcode.com/

@@ -4,7 +4,7 @@
 Ele tem uma particularidade: seus requisitos são implementados ao longo dos exercícios pós aula. Isso significa que caso você siga o desenvolvimento das aulas, quando chegar na data de entrega já terá um projeto funcional.
 
 <details>
-<summary>**O que fazer nas sexta-feiras já que o projeto é feito durante a semana com os exercícios pós-aula?**</summary>
+<summary>O que fazer nas sexta-feiras já que o projeto é feito durante a semana com os exercícios pós-aula?</summary>
 
 ```
 - rever aulas que você não pôde assistir
